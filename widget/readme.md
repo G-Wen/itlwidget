@@ -7,6 +7,8 @@ To run the widget:
 Customizations:
 To use the light theme change the stylesheet in `index.html` from `themes/dark/style.css` to `themes/light/style.css`.
 
+To use mute's theme run set your source to `themes\mute\index.html`. Make the appropriate adjustments to the `themes\mute\widget.js`.
+
 If you want to change the profile picture replace Avatar.png with the picture you want. 
  - If you want to use an alternative file format/file name specify the source inside of `widget.js`.
 
