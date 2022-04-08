@@ -1,6 +1,6 @@
 'use strict';
 // Change this to be the same as your ITL entrant id
-const entrant_id = 1;
+const entrant_id = 16;
 
 // Use this to override the name that displays on the widget
 // Useful if your ITL/GS name is over 11 characters
@@ -33,10 +33,11 @@ class ITLWidget extends React.Component {
   }
 
   render() {
-    var entrant_info = e('div', {className: "entrant_info"}, 
-      e('div', {className: "entrant_name"}, 
+    var entrant_name = e('div', {className: "entrant_name"}, 
         (override_name == "" ? this.state.name : override_name)
-      ),
+    )
+
+    var entrant_info = e('div', {className: "entrant_info"}, 
       e('div', {className: "entrant_id"},
         e('div', null, "ID: " + this.state.id),
       ),
@@ -91,7 +92,10 @@ class ITLWidget extends React.Component {
     );
 
     return e('div', {className: "wrapper"}, 
-      e('div', null, e('img', {src: (avatar_source == "" ? "Avatar.png" : avatar_source), width: "100px", height: "100px"}, null)),
+      e('div', {className: "profile_picture"}, 
+        e('img', {src: (avatar_source == "" ? "Avatar.png" : avatar_source), "object-fit": "contain", width: "100px", height: "100px"}, null)
+      ),
+      entrant_name,
       entrant_info, 
       song_info,
       ladder

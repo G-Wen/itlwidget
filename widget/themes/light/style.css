@@ -1,33 +1,41 @@
 .bgwrap{
-  background-image: url("bg.jpg");
+  background-image: url("../../bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 715px;
+  max-width: 550px;
+  height: 124px;
 }
 .wrapper {
   display: grid;
-  grid-template-columns: 105px minmax(120px, 200px) 110px minmax(250px, 300px);
+  grid-template-columns: 105px 125px 110px 200px;
   gap: 2px;
-  grid-auto-rows: 100px minmax(0, 140px);
-  font-family: "Monaco", "Lucida Console", "Courier New", monospace;
+  grid-auto-rows: 33px minmax(0px, 140px);
+  font-family: "Bahnschrift", Times, serif;
   background-color: rgba(255, 255, 255, 0.80);
+  color: black;
+  height: 124px;
 }
 .profile_picture {
   grid-column: 1;
   grid-row: 1;
-}
-.entrant_info {
-  grid-column: 2;
-  grid-row: 1;
+  margin-top: 11px;
+  margin-left: 2px;
 }
 .entrant_name {
+  grid-column: 2;
+  grid-row: 1;
   font-size: 28px;
   font-weight: bold;
   padding-top: 1px;
   padding-bottom: 1px;
   white-space: nowrap;
-  overflow: hidden;
+}
+
+.entrant_info {
+  grid-column: 2;
+  grid-row: 2;
+  padding-top: 4px;
 }
 .entrant_id{
   font-size: 8px;
@@ -52,7 +60,7 @@
 .clear_info{
   grid-column: 3;
   grid-row: 1;
-  padding-top: 26px;
+  padding-top: 32px;
   padding-right: 15px;
 }
 .passes{
@@ -64,24 +72,28 @@
 .fcs{
   font-size: 14px;
   padding-bottom: 1px;
+  color: #007800;
   display: flex;
   justify-content: space-between;
 }
 .fecs{
   font-size: 14px;
   padding-bottom: 1px;
+  color: #daa520;
   display: flex;
   justify-content: space-between;
 }
 .quads{
   font-size: 14px;
   padding-bottom: 1px;
+  color: #34a2d0;
   display: flex;
   justify-content: space-between;
 }
 .quints{
   font-size: 14px;
   padding-bottom: 1px;
+  color: #ee637b;
   display: flex;
   justify-content: space-between;
 }
@@ -113,6 +125,4 @@
   display: flex;
   justify-content: space-between;
   padding-right: 2px;
-}
-.ladder_rank{
 }
