@@ -10,7 +10,7 @@ const override_name = "";
 // Useful if you want to use a non-png file as an avatar
 const avatar_source = "";
 
-const endpoint = "http://40.113.237.101:8080/entrant/";
+const endpoint = "http://40.113.237.101:8080/v2/entrant/";
 
 const e = React.createElement;
 const default_state = {"id":"--","name":"--","ranking_points":"--","total_points":"--","song_points":"--","bonus_points":"--","passes":"---","full_combos":"--","full_excellent_combos":"--","quad_stars":"--","quint_stars":"-","rival1":null,"rival2":null,"rival3":null,"rank":"---","ladder":[]};
