@@ -107,6 +107,7 @@
     grid-row: 3;
     font-size: 14px;
     background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
   }
   .ladder_title {
     text-decoration: underline;
@@ -115,19 +116,19 @@
     background-color: rgba(0, 0, 0, 0.7);
   }
   .rival{
-    background-color: rgba(152, 102, 102, 0.5);
+    background-color: rgba(152, 102, 102, 1);
     display: flex;
     justify-content: space-between;
     padding-right: 2px;
   }
   .self{
-    background-color: rgba(102, 152, 102, 0.5);
+    background-color: rgba(102, 152, 102, 1);
     display: flex;
     justify-content: space-between;
     padding-right: 2px;
   }
   .neutral{
-    background-color: rgba(170, 170, 170, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: space-between;
     padding-right: 2px;

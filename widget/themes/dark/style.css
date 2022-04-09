@@ -111,13 +111,13 @@
   font-size: 14px;
 }
 .rival{
-  background-color: rgba(204, 128, 128, 0.5);
+  background-color: rgba(152, 102, 102, 0.5);
   display: flex;
   justify-content: space-between;
   padding-right: 2px;
 }
 .self{
-  background-color: rgba(128, 204, 128, 0.5);
+  background-color: rgba(102, 152, 102, 0.5);
   display: flex;
   justify-content: space-between;
   padding-right: 2px;

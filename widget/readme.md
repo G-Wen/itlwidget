@@ -7,9 +7,14 @@ To run the widget:
 Customizations:
 To use a different theme themes change the stylesheet in `index.html` from `themes/dark/style.css` to:
 * Dark: `themes/dark/style.css`
-* Light: `themes/light/style.css`
 * Dark Vertical: `themes/darkvertical/style.css`
+* Dark Info Only: `themes/darkinfo/style.css`
+* Dark Ladder Only: `themes/darkladder/style.css`
+
+* Light: `themes/light/style.css`
 * Light Vertical: `themes/lightvertical/style.css`
+* Light Info Only: `themes/lightinfo/style.css`
+* Light Ladder Only: `themes/lightladder/style.css`
 
 To use mute's theme run set your source to `themes\mute\index.html`. Make the appropriate adjustments to the `themes\mute\widget.js`.
 
