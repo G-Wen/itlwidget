@@ -1,5 +1,7 @@
 import json
 import requests
+from gsendpoints import *
+import time
 
 key_map = {
     "entrant_id": "id",
@@ -16,7 +18,7 @@ key_map = {
 }
 
 def get_entrant(entrant_id):
-    r = requests.get(f"<GrooveStats API Endpoint")
+    r = requests.get(f"{streamer_stats_endpoint}{entrant_id}")
     itl_ladder = json.loads(r.text)
     self = ""
     entrant = {}
@@ -50,3 +52,46 @@ def get_entrant(entrant_id):
         ladder_entry['difference'] = entrant['ranking_points'] - ladder_entry['ranking_points']
 
     return entrant
+
+def get_score_info(entrant_id):
+    entrant_scores = json.loads(requests.get(f"{entrant_scores_endpoint}{entrant_id}").text)['songScores']
+    entrant_scores = {score["song_id"]: score for score in entrant_scores if score["score_ex"]}
+    time.sleep(0.2)
+    return entrant_scores
+
+def get_vs_info(songlist1, songlist2):
+    mutual_songs = set(songlist1).intersection(set(songlist2))
+    vs_info = []
+    for song_id in mutual_songs:
+        p1_score = songlist1[song_id]
+        p2_score = songlist2[song_id]
+        info = {}
+        info['song_id'] = song_id
+        info['song_title'] = p1_score['song_title']
+        info['song_artist'] = p1_score['song_artist']
+        info['p1_score_ex'] = p1_score['score_ex']
+        info['p1_score_points'] = p1_score['score_points']
+        info['p1_score_bonus_points'] = p1_score['score_bonus_points']
+        info['p1_score_best_clear_type'] = p1_score['score_best_clear_type']
+        info['p2_score_ex'] = p2_score['score_ex']
+        info['p2_score_points'] = p2_score['score_points']
+        info['p2_score_bonus_points'] = p2_score['score_bonus_points']
+        info['p2_score_best_clear_type'] = p2_score['score_best_clear_type']
+        info['score_ex_difference'] = p1_score['score_ex'] - p2_score['score_ex']
+        info['score_points_difference'] = p1_score['score_points'] - p2_score['score_points']
+        vs_info.append(info)
+
+    vs_info.sort(key=lambda x: x['score_ex_difference'])
+    return vs_info
+
+def get_versus_info(entrant_id, rivals):
+    entrant_scores = get_score_info(entrant_id)
+    
+    rivals_scores = []
+    for rival_id in rivals:
+        rival_scores = get_score_info(rival_id)
+        rivals_scores.append(rival_scores)
+
+    vs_info = [get_vs_info(entrant_scores, rival_scores) for rival_scores in rivals_scores]
+    return vs_info
+    

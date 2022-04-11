@@ -36,3 +36,12 @@ def v2_get_entrant(entrant_id: int, q: Optional[str] = None):
         return entrant
     except:
         raise HTTPException(status_code=500, detail="Failed to retrieve entrant information.")
+
+@app.get("/versus/entrant/{entrant_id}")
+def get_versus_info(entrant_id: int, q: Optional[str] = None):
+    try:
+        versus_info = itlapi.get_versus_info(entrant_id)
+        return versus_info
+    except:
+        raise HTTPException(status_code=500, detail="Failed to retrieve versus information.")
+    return entrant_id
