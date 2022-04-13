@@ -38,9 +38,18 @@ def v2_get_entrant(entrant_id: int, q: Optional[str] = None):
         raise HTTPException(status_code=500, detail="Failed to retrieve entrant information.")
 
 @app.get("/versus/entrant/{entrant_id}")
-def get_versus_info(entrant_id: int, q: Optional[str] = None):
+async def get_versus_info(entrant_id: int, rival1: int = None, rival2: Optional[int] = None, rival3: Optional[int] = None):
+    if not rival1 and not rival2 and not rival3:
+        return "Pass in at least 1 rival entrant_id as a parameter. eg ?rival1=16&rival2=1"
+
+    rivals = [rival1]
+    if rival2:
+        rivals.append(rival2)
+    if rival3:
+        rivals.append(rival3)
+
     try:
-        versus_info = itlapi.get_versus_info(entrant_id)
+        versus_info = await itlapi.get_versus_info(entrant_id, rivals)
         return versus_info
     except:
         raise HTTPException(status_code=500, detail="Failed to retrieve versus information.")
