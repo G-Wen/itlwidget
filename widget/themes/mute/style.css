@@ -18,28 +18,28 @@
   grid-column: 1;
   grid-row: 1;
 }
+.entrant_id{
+  font-size: 12px;
+  font-weight: ;
+  margin-top: 28px;
+  padding-left: 31px;
+  color: #bbbbbb;
+}
 .entrant_name {
   font-size: 48px;
   font-weight: bold;
-  padding-top: 19px;
+  margin-top: -8px;
   padding-left: 29px;
   color: #ffffff;
   white-space: nowrap;
   overflow: hidden;
 }
-.entrant_id{
-  font-size: 12px;
-  font-weight: bold;
-  margin-top: -14px;
-  padding-left: 148px;
-  color: #aaaaaa;
-}
 .entrant_rank {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
-  padding-top: 6px;
+  margin-top: -2px;
   padding-bottom: 12px;
-  padding-left: 29px;
+  padding-left: 30px;
   color: #ffffff;
 }
 .entrant_points{

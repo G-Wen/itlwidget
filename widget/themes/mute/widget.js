@@ -7,7 +7,7 @@ const entrant_id = 18;
 const override_name = "";
 
 const e = React.createElement;
-const default_state = {"id":18,"name":"--","ranking_points":"--","total_points":"--","song_points":"--","bonus_points":"--","passes":"---","full_combos":"--","full_excellent_combos":"--","quad_stars":"--","quint_stars":"-","rival1":null,"rival2":null,"rival3":null,"rank":"---","ladder":[]};
+const default_state = {"id":"--","name":"--","ranking_points":"--","total_points":"--","song_points":"--","bonus_points":"--","passes":"---","full_combos":"--","full_excellent_combos":"--","quad_stars":"--","quint_stars":"-","rival1":null,"rival2":null,"rival3":null,"rank":"---","ladder":[]};
 const endpoint = "http://40.113.237.101:8080/v2/entrant/"
 
 class ITLWidget extends React.Component {
@@ -27,11 +27,11 @@ class ITLWidget extends React.Component {
 
   render() {
     var entrant_info = e('div', {className: "entrant_info"}, 
-      e('div', {className: "entrant_name"}, 
-        (override_name == "" ? this.state.name : override_name)
-      ),
       e('div', {className: "entrant_id"},
         e('div', null, "ID: " + this.state.id),
+      ),
+      e('div', {className: "entrant_name"}, 
+        (override_name == "" ? this.state.name : override_name)
       ),
       e('div', {className: "entrant_rank"},
         e('div', null, "Rank " + this.state.rank),

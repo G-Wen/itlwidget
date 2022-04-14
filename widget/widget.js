@@ -25,7 +25,7 @@ class ITLWidget extends React.Component {
 
   componentDidMount() {
     get_info.bind(this)();
-    this.interval = setInterval(get_info.bind(this), 150*1000);
+    this.interval = setInterval(get_info.bind(this), 60*1000);
   }
 
   componentWillUnmount() {
