@@ -1,8 +1,9 @@
 import json
+from tkinter import E
 import requests
 from gsendpoints import *
-import time
 from collections import Counter
+import asyncio
 
 key_map = {
     "entrant_id": "id",
@@ -17,6 +18,16 @@ key_map = {
     "entrant_total_songs_quint": "quint_stars",
     "entrant_rank": "rank",
 }
+
+def get_entrant_map():
+    r = requests.get(f"{leaderboard_endpoint}")
+    leaderboard = json.loads(r.text)
+    for entrant in leaderboard["entrants"]:
+        id_to_name[entrant['entrant_id']] = entrant['members_name']
+        name_to_id[entrant['members_name']] = entrant['entrant_id']
+    entrants = {"id_to_name": id_to_name, "name_to_id": name_to_id}
+    with open('entrants.json', 'w') as f:
+        json.dump(entrants, f)
 
 def get_entrant(entrant_id):
     r = requests.get(f"{streamer_stats_endpoint}{entrant_id}")
@@ -98,14 +109,50 @@ async def get_versus_info(entrant_id, rivals):
         return []
 
     entrant_scores = get_score_info(entrant_id)
-    time.sleep(0.2)
+    await asyncio.sleep(0.2)
     
     rivals_scores = []
     for rival_id in rivals:
         rival_scores = get_score_info(rival_id)
-        time.sleep(0.2)
+        await asyncio.sleep(0.2)
         rivals_scores.append(rival_scores)
 
     vs_info = [get_matchup_info(entrant_scores, rival_scores) for rival_scores in rivals_scores]
     return vs_info
-    
+
+def get_useful_fields(song_score):
+    return {
+        'song_title': song_score['song_title'],
+        'song_points': song_score['song_points'],
+        'song_meter': song_score['song_meter'],
+        'p1_score_ex': song_score['p1_score_ex'],
+        'p1_score_points': song_score['p1_score_points'],
+        'p2_score_ex': song_score['p2_score_ex'],
+        'p2_score_points': song_score['p2_score_points'],
+        'score_ex_difference': song_score['score_ex_difference'],
+        'score_points_difference': song_score['score_points_difference']
+    }
+
+async def get_versus_info_csv(entrant_id, rivals):
+    data = await get_versus_info(entrant_id, rivals)
+    merged_data = {}
+    for rival_id, rival_scores in zip(rivals, data):
+        for song_score in rival_scores:
+            song_id = song_score['song_id']
+            parsed_song_score = get_useful_fields(song_score)
+            if rival_id not in id_to_name:
+                # if we do not have a name associated with the id update our entrant list
+                get_entrant_map()
+            parsed_song_score['rival_name'] = id_to_name[rival_id]
+            if song_id not in merged_data:
+                merged_data[song_id] = parsed_song_score
+                continue
+            if parsed_song_score['p2_score_points'] > merged_data[song_id]['p2_score_points']:
+                merged_data[song_id] = parsed_song_score
+    fieldnames = ['song_title', 'song_points', 'song_meter', 'p1_score_ex', 'p1_score_points', 'p2_score_ex', 'p2_score_points', 'score_ex_difference', 'score_points_difference', 'rival_name']
+    output = []
+    output.append(",".join(fieldnames))
+    for song in merged_data:
+        line = ",".join(str(merged_data[song][field]) for field in fieldnames)
+        output.append(line)
+    return "\n".join(output)
