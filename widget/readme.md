@@ -4,6 +4,7 @@ To run the widget:
 1. Change the entrant id at the start of `widget.js` to your own entrant id. Save.
 2. Set `index.html` as a browser source for your stream.
 
+To find your entrant_id view your profile on the ITL website and note the number that follows `entrant/` in the url.
 Customizations:
 To use a different theme themes change the stylesheet in `index.html` from `themes/dark/style.css` to:
 * Dark: `themes/dark/style.css`
@@ -24,4 +25,4 @@ If you want to change the profile picture replace Avatar.png with the picture yo
 If you want to change the background picture replace bg.png with the picture you want. 
  - If you want to use an alternative file format/file name specify the source inside of `style.css`.
 
-If your name is too long you can override the name it shows by providing an override name at the start of widget.js. 
+If your name is too long you can override the name it shows by providing an override name at the start of `widget.js`. 

@@ -14,8 +14,12 @@ You do not need the `api` folder if you are only planning on using the widget.
 
 To run the widget download the repository and follow the instructions in `widget/readme.txt`.
 
+Acknowledgements:
+
 Dark theme of the widget was provided courtesy of [Freis](https://github.com/gab-santi), minor modifications have been made.
 
 mute's theme of the widget was provided courtesy of [mutesauce](https://github.com/mutesauce).
 
 VincentITG has created a [reimplementation in Typescript](https://github.com/vlnguyen/itl-stream-widget).
+
+Verus CSV endpoint based on code provided by [DRON](https://github.com/its-dron).
