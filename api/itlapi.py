@@ -153,6 +153,9 @@ async def get_versus_info_csv(entrant_id, rivals):
     output = []
     output.append(",".join(fieldnames))
     for song in merged_data:
+        # Sanitize string fields
+        song['song_title'] = song['song_title'].replace(',', '')
+        song['rival_name'] = song['rival_name'].replace(',', '')
         line = ",".join(str(merged_data[song][field]) for field in fieldnames)
         output.append(line)
     return "\n".join(output)
