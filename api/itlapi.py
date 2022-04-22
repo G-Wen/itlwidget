@@ -144,6 +144,10 @@ async def get_versus_info_csv(entrant_id, rivals):
                 # if we do not have a name associated with the id update our entrant list
                 get_entrant_map()
             parsed_song_score['rival_name'] = id_to_name[rival_id]
+
+            # Sanitize string fields
+            parsed_song_score['song_title'] = parsed_song_score['song_title'].replace(',', '')
+            parsed_song_score['rival_name'] = parsed_song_score['rival_name'].replace(',', '')
             if song_id not in merged_data:
                 merged_data[song_id] = parsed_song_score
                 continue
@@ -153,9 +157,6 @@ async def get_versus_info_csv(entrant_id, rivals):
     output = []
     output.append(",".join(fieldnames))
     for song in merged_data:
-        # Sanitize string fields
-        song['song_title'] = song['song_title'].replace(',', '')
-        song['rival_name'] = song['rival_name'].replace(',', '')
         line = ",".join(str(merged_data[song][field]) for field in fieldnames)
         output.append(line)
     return "\n".join(output)
