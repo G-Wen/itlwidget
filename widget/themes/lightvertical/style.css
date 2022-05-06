@@ -1,134 +1,138 @@
 .bgwrap{
-    background-image: url("../../bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 340px;
-    height: 124px;
-  }
-  .wrapper {
-    display: grid;
-    grid-template-columns: 105px 125px 110px;
-    gap: 0px;
-    grid-auto-rows: 33px minmax(0px, 124px) minmax(0px, 140px);
-    font-family: "Bahnschrift", Times, serif;
-    background-color: rgba(255, 255, 255, 0.80);
-    color: black;
-    height: 124px;
-  }
-  .profile_picture {
-    grid-column: 1;
-    grid-row: 1;
-    margin-top: 11px;
-    margin-left: 2px;
-  }
-  .entrant_name {
-    grid-column: 2;
-    grid-row: 1;
-    font-size: 28px;
-    font-weight: bold;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    margin-left: 2px;
-    white-space: nowrap;
-  }
-  
-  .entrant_info {
-    grid-column: 2;
-    grid-row: 2;
-    padding-top: 4px;
-    margin-left: 2px;
-  }
-  .entrant_id{
-    font-size: 8px;
-    margin-top: -4px;
-    padding-left: 4px;
-    padding-bottom: 4px;
-    color: #999999;
-  }
-  .entrant_rank {
-    font-size: 18px;
-    padding-bottom: 4px;
-  }
-  .entrant_points{
-    font-size: 16px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    width: 100px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .clear_info{
-    grid-column: 3;
-    grid-row: 1;
-    padding-top: 32px;
-    padding-right: 5px;
-  }
-  .passes{
-    grid-template-columns: 100px;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .fcs{
-    font-size: 14px;
-    padding-bottom: 1px;
-    color: #007800;
-    display: flex;
-    justify-content: space-between;
-  }
-  .fecs{
-    font-size: 14px;
-    padding-bottom: 1px;
-    color: #daa520;
-    display: flex;
-    justify-content: space-between;
-  }
-  .quads{
-    font-size: 14px;
-    padding-bottom: 1px;
-    color: #34a2d0;
-    display: flex;
-    justify-content: space-between;
-  }
-  .quints{
-    font-size: 14px;
-    padding-bottom: 1px;
-    color: #ee637b;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .ladder {
-    margin-top: 45px;
-    padding-top: 0px;
-    grid-column: 1 / 4;
-    grid-row: 3;
-    font-size: 14px;
-    background-color: rgba(238, 238, 238);
-  }
-  .ladder_title {
-    text-decoration: underline;
-    padding-bottom: 1px;
-    font-size: 14px;
-    background-color: rgba(238, 238, 238);
-  }
-  .rival{
-    background-color: rgba(204, 170, 170, 0.5);
-    display: flex;
-    justify-content: space-between;
-    padding-right: 2px;
-  }
-  .self{
-    background-color: rgba(170, 204, 170, 0.5);
-    display: flex;
-    justify-content: space-between;
-    padding-right: 2px;
-  }
-  .neutral{
-    background-color: rgba(238, 238, 238);
-    display: flex;
-    justify-content: space-between;
-    padding-right: 2px;
-  }
+  background-image: url("../../bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 340px;
+  height: 124px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 105px 125px 110px;
+  gap: 0px;
+  grid-auto-rows: 33px minmax(0px, 124px) minmax(0px, 140px);
+  font-family: "Bahnschrift", Times, serif;
+  background-color: rgba(255, 255, 255, 0.80);
+  color: black;
+  height: 124px;
+}
+.profile_picture {
+  grid-column: 1;
+  grid-row: 1;
+  margin-top: 11px;
+  margin-left: 2px;
+}
+.entrant_name {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-left: 2px;
+  white-space: nowrap;
+}
+
+.entrant_info {
+  grid-column: 2;
+  grid-row: 2;
+  padding-top: 4px;
+  margin-left: 2px;
+}
+.entrant_id{
+  font-size: 8px;
+  margin-top: -4px;
+  padding-left: 4px;
+  padding-bottom: 4px;
+  color: #999999;
+}
+.entrant_rank {
+  font-size: 18px;
+  padding-bottom: 4px;
+}
+.entrant_points{
+  font-size: 16px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clear_info{
+  grid-column: 3;
+  grid-row: 1;
+  padding-top: 32px;
+  padding-right: 5px;
+}
+.passes{
+  grid-template-columns: 100px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+.fcs{
+  font-size: 14px;
+  padding-bottom: 1px;
+  color: #007800;
+  display: flex;
+  justify-content: space-between;
+}
+.fecs{
+  font-size: 14px;
+  padding-bottom: 1px;
+  color: #daa520;
+  display: flex;
+  justify-content: space-between;
+}
+.quads{
+  font-size: 14px;
+  padding-bottom: 1px;
+  color: #34a2d0;
+  display: flex;
+  justify-content: space-between;
+}
+.quints{
+  font-size: 14px;
+  padding-bottom: 1px;
+  color: #ee637b;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ladder {
+  margin-top: 45px;
+  padding-top: 0px;
+  grid-column: 1 / 4;
+  grid-row: 3;
+  font-size: 14px;
+  background-color: rgba(238, 238, 238);
+}
+.ladder_title {
+  text-decoration: underline;
+  padding-bottom: 1px;
+  font-size: 14px;
+  background-color: rgba(238, 238, 238);
+}
+.ladder_rank {
+  max-height: 17px;
+  overflow: hidden;
+}
+.rival{
+  background-color: rgba(229, 204, 204, 1);
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2px;
+}
+.self{
+  background-color: rgba(204, 229, 204, 1);
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2px;
+}
+.neutral{
+  background-color: rgba(238, 238, 238);
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2px;
+}

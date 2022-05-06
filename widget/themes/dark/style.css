@@ -110,6 +110,10 @@
   padding-bottom: 1px;
   font-size: 14px;
 }
+.ladder_rank {
+  max-height: 17px;
+  overflow: hidden;
+}
 .rival{
   background-color: rgba(152, 102, 102, 0.5);
   display: flex;

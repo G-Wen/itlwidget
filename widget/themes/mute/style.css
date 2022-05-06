@@ -102,6 +102,10 @@
   margin-left: -48px;
   margin-right: 424px;
 }
+.ladder_rank {
+  max-height: 20px;
+  overflow: hidden;
+}
 .rival{
   background-color: rgba(255, 61, 207, .75);
   color: #ffffff;

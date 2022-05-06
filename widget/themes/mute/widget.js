@@ -1,6 +1,6 @@
 'use strict';
 // Change this to be the same as your ITL entrant id
-const entrant_id = 18;
+const entrant_id = 586;
 
 // Use this to override the name that displays on the widget
 // Useful if your ITL/GS name is over 11 characters
@@ -73,7 +73,7 @@ class ITLWidget extends React.Component {
 
     var ladder_entries = this.state.ladder.map((item, index) =>
       e('div', {'key': index, className: item.type}, 
-        e('div', {}, item.rank + ". " + item.name),
+        e('div', {className: "ladder_rank"}, item.rank + ". " + item.name),
         e('div', {}, format_difference(item.difference))
       )
     );

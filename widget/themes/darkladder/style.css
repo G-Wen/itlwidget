@@ -1,133 +1,142 @@
 .bgwrap{
-    background-image: url("../../bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 200px;
-    height: 124px;
-  }
-  .wrapper {
-    display: grid;
-    grid-template-columns: 200px 0px 0px;
-    gap: 0px;
-    grid-auto-rows: 33px minmax(0px, 124px) minmax(0px, 140px);
-    font-family: "Bahnschrift", Times, serif;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    height: 124px;
-  }
-  .profile_picture {
-    grid-column: 1;
-    grid-row: 1;
-    margin-top: 11px;
-    margin-left: 2px;
-    visibility: hidden;
-  }
-  .entrant_name {
-    grid-column: 2;
-    grid-row: 1;
-    font-size: 28px;
-    font-weight: bold;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    margin-left: 2px;
-    white-space: nowrap;
-    visibility: hidden;
-  }
-  
-  .entrant_info {
-    grid-column: 2;
-    grid-row: 2;
-    padding-top: 4px;
-    margin-left: 2px;
-    visibility: hidden;
-  }
-  .entrant_id{
-    font-size: 8px;
-    margin-top: -4px;
-    padding-left: 4px;
-    padding-bottom: 4px;
-    color: #aaaaaa;
-  }
-  .entrant_rank {
-    font-size: 18px;
-    padding-bottom: 4px;
-  }
-  .entrant_points{
-    font-size: 16px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    width: 100px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .clear_info{
-    grid-column: 3;
-    grid-row: 1;
-    padding-top: 32px;
-    padding-right: 5px;
-    visibility: hidden;
-  }
-  .passes{
-    grid-template-columns: 100px;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .fcs{
-    font-size: 14px;
-    padding-bottom: 1px;
-    color: lightgreen;
-    display: flex;
-    justify-content: space-between;
-  }
-  .fecs{
-    font-size: 14px;
-    padding-bottom: 1px;
-    color: goldenrod;
-    display: flex;
-    justify-content: space-between;
-  }
-  .quads{
-    font-size: 14px;
-    padding-bottom: 1px;
-    color: skyblue;
-    display: flex;
-    justify-content: space-between;
-  }
-  .quints{
-    font-size: 14px;
-    padding-bottom: 1px;
-    color: pink;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .ladder {
-    grid-column: 1 / 4;
-    grid-row: 1;
-    font-size: 14px;
-  }
-  .ladder_title {
-    text-decoration: underline;
-    padding-bottom: 1px;
-    font-size: 14px;
-  }
-  .rival{
-    background-color: rgba(152, 102, 102, 0.5);
-    display: flex;
-    justify-content: space-between;
-    padding-right: 2px;
-  }
-  .self{
-    background-color: rgba(102, 152, 102, 0.5);
-    display: flex;
-    justify-content: space-between;
-    padding-right: 2px;
-  }
-  .neutral{
-    display: flex;
-    justify-content: space-between;
-    padding-right: 2px;
-  }
+  background-image: url("../../bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 124px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 200px 0px 0px;
+  gap: 0px;
+  grid-auto-rows: 33px minmax(0px, 124px) minmax(0px, 140px);
+  font-family: "Bahnschrift", Times, serif;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  height: 124px;
+}
+.profile_picture {
+  grid-column: 1;
+  grid-row: 1;
+  margin-top: 11px;
+  margin-left: 2px;
+  visibility: hidden;
+}
+.entrant_name {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-left: 2px;
+  white-space: nowrap;
+  visibility: hidden;
+}
+
+.entrant_info {
+  grid-column: 2;
+  grid-row: 2;
+  padding-top: 4px;
+  margin-left: 2px;
+  visibility: hidden;
+}
+.entrant_id{
+  font-size: 8px;
+  margin-top: -4px;
+  padding-left: 4px;
+  padding-bottom: 4px;
+  color: #aaaaaa;
+}
+.entrant_rank {
+  font-size: 18px;
+  padding-bottom: 4px;
+}
+.entrant_points{
+  font-size: 16px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clear_info{
+  grid-column: 3;
+  grid-row: 1;
+  padding-top: 32px;
+  padding-right: 5px;
+  visibility: hidden;
+}
+.passes{
+  grid-template-columns: 100px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+.fcs{
+  font-size: 14px;
+  padding-bottom: 1px;
+  color: lightgreen;
+  display: flex;
+  justify-content: space-between;
+}
+.fecs{
+  font-size: 14px;
+  padding-bottom: 1px;
+  color: goldenrod;
+  display: flex;
+  justify-content: space-between;
+}
+.quads{
+  font-size: 14px;
+  padding-bottom: 1px;
+  color: skyblue;
+  display: flex;
+  justify-content: space-between;
+}
+.quints{
+  font-size: 14px;
+  padding-bottom: 1px;
+  color: pink;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ladder {
+  margin-top: 0px;
+  padding-top: 0px;
+  grid-column: 1 / 4;
+  grid-row: 1;
+  font-size: 14px;
+  background-color: rgba(76, 76, 76, 1);
+}
+.ladder_title {
+  text-decoration: underline;
+  padding-bottom: 1px;
+  font-size: 14px;
+  background-color: rgba(76, 76, 76, 1);
+}
+.ladder_rank {
+  max-height: 17px;
+  overflow: hidden;
+}
+.rival{
+  background-color: rgba(152, 102, 102, 1);
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2px;
+}
+.self{
+  background-color: rgba(102, 152, 102, 1);
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2px;
+}
+.neutral{
+  background-color: rgba(76, 76, 76, 1);
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2px;
+}
